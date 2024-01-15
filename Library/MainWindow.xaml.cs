@@ -20,9 +20,14 @@ namespace Library
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        ApplicationContext db;
+
         public MainWindow()
         {
             InitializeComponent();
+            db = new ApplicationContext();
+
         }
 
         private void Button_Reg_Click(object sender, RoutedEventArgs e)
@@ -67,8 +72,24 @@ namespace Library
                 textBoxEmail.Background = Brushes.Transparent;
 
                 MessageBox.Show("Successful!");
+
+                User user = new User(login, email, pass);
+                
+                db.Users.Add(user);
+                db.SaveChanges();
+
+                AuthWindow authWindow = new AuthWindow();
+                authWindow.Show();
+                Hide();
             }
 
+        }
+
+        private void Button_Window_Auth_Click(object sender, RoutedEventArgs e)
+        {
+            AuthWindow authWindow = new AuthWindow();
+            authWindow.Show();
+            Hide();
         }
     }
 }

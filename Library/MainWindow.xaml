@@ -8,16 +8,16 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="MainWindow" Height="600" Width="1000">
     <Grid>
-        <Image Source="/image1.png" Stretch="Fill"/>
+        <Image Source="Images/image1.png" Stretch="Fill"/>
         <Border MinWidth="300" Margin="15" Background="White" Padding="30" MaxWidth="550" CornerRadius="20" MinHeight="350" MaxHeight="460">
             <Border.Effect>
                 <DropShadowEffect BlurRadius= "30" Color= "LightGray" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel>
-                <TextBlock Text="User Login" FontSize="34" FontWeight="Bold" FontFamily="Century Gothic" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Text="Registration" FontSize="34" FontWeight="Bold" FontFamily="Century Gothic" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 <Grid Margin="10 30 30 0">
                     <Button HorizontalAlignment="Left" Content="Registration" Background="#FFD4B16A" BorderBrush="#00000000" />
-                    <Button HorizontalAlignment="Right" Content="Enter" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFD4B16A"/>
+                    <Button HorizontalAlignment="Right" Content="Login" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFD4B16A" Click="Button_Window_Auth_Click"/>
                 </Grid>
                 <TextBox x:Name="textBoxLogin" materialDesign:HintAssist.Hint="Type Your UserName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10"/>
                 <PasswordBox x:Name="passBox" materialDesign:HintAssist.Hint="Type Your Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="10"/>
