@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="AuthWindow" Height="600" Width="1000">
+        Title="AuthWindow" Height="600" Width="1000" VerticalAlignment="Center">
     <Grid>
         <Image Source="Images/image1.png" Stretch="Fill"/>
         <Border MinWidth="300" Margin="15,15,15,38" Background="White" Padding="30" MaxWidth="550" CornerRadius="20" MinHeight="250" MaxHeight="350">

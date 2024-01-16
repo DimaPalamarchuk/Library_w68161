@@ -4,9 +4,65 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:materialDesignIcons="http://materialdesignicons.com/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Navigation" Height="450" Width="800">
+        Title="Navigation" Height="600" Width="1000">
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/image1.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" HorizontalAlignment="Left" Margin="408,30,0,0" TextWrapping="Wrap" Text="Navigation" VerticalAlignment="Top" FontSize="32" FontFamily="Century Gothic" FontWeight="Bold" Foreground="White">
+            <TextBlock.Effect>
+                <DropShadowEffect BlurRadius="10" Color="LightGray"/>
+            </TextBlock.Effect>
+        </TextBlock>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" MinHeight="100" MaxHeight="254" Background="#FFFAFAFA">
+                <materialDesign:PackIcon Kind="Book" Height="100" Width="100" Margin="0 55 0 0"/>
+                <TextBlock Text="Books" Margin="0 5 0 0" HorizontalAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16"/>
+                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" BorderBrush="White" Background="#FFD4B16A"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" MinHeight="100" MaxHeight="254" Background="White">
+                <materialDesign:PackIcon Kind="Library" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 55 0 0"/>
+                <TextBlock Text="Library" Margin="0,5,0,0" HorizontalAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16"/>
+                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Background="#FFD4B16A" BorderBrush="White"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" MinHeight="100" MaxHeight="254" Background="White">
+                <materialDesign:PackIcon Kind="Bookshelf" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 55 0 0"/>
+                <TextBlock Text="Bookshelf" Margin="0,5,0,0" HorizontalAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16"/>
+                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" BorderBrush="White" Background="#FFD4B16A"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" MinHeight="100" MaxHeight="254" Background="White">
+                <materialDesign:PackIcon Kind="Bookmark" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 55 0 0"/>
+                <TextBlock Text="Bookmark" Margin="0,5,0,0" HorizontalAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16"/>
+                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Background="#FFD4B16A" BorderBrush="White"/>
+            </StackPanel>
+
+        </Grid>
+
+        <TextBlock Grid.Row="2" x:Name="userName" HorizontalAlignment="Left" Margin="45,0,0,0" TextWrapping="Wrap" Text="User:" VerticalAlignment="Top" FontSize="32" FontFamily="Century Gothic" FontWeight="Bold" Foreground="White">
+            <TextBlock.Effect>
+                <DropShadowEffect BlurRadius="10" Color="LightGray"/>
+            </TextBlock.Effect>
+        </TextBlock>
     </Grid>
 </Window>

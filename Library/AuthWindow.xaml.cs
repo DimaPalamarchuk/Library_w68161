@@ -1,22 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Library
 {
-    /// <summary>
-    /// Логика взаимодействия для AuthWindow.xaml
-    /// </summary>
     public partial class AuthWindow : Window
     {
         public AuthWindow()
@@ -56,8 +44,9 @@ namespace Library
                 if (authUser != null)
                 {
                     MessageBox.Show("Successful!");
-                    UserPageWindow userPageWindow = new UserPageWindow();
-                    userPageWindow.Show();
+
+                    Navigation navigation = new Navigation(login);
+                    navigation.Show();
                     Hide();
                 }
                 else
@@ -67,8 +56,8 @@ namespace Library
 
         private void Button_Window_Reg_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            Navigation navigation = new Navigation();
+            navigation.Show();
             Hide();
         }
     }
