@@ -39,9 +39,9 @@ namespace Library
         
         }
 
-//        public override string ToString()
-//        {
-//            return "User: " + Login + ".Email: " + Email;
-//        }
+        public override string ToString()
+        {
+            return "User: " + Login + " Email: " + Email;
+        }
     }
 }
