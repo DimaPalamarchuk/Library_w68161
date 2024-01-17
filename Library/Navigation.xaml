@@ -36,7 +36,7 @@
             <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" MinHeight="100" MaxHeight="254" Background="#FFFAFAFA">
                 <materialDesign:PackIcon Kind="Book" Height="100" Width="100" Margin="0 55 0 0"/>
                 <TextBlock Text="Books" Margin="0 5 0 0" HorizontalAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16"/>
-                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" BorderBrush="White" Background="#FFD4B16A"/>
+                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" BorderBrush="White" Background="#FFD4B16A" Click="Button_Search_Book_Click"/>
             </StackPanel>
 
             <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" MinHeight="100" MaxHeight="254" Background="White">

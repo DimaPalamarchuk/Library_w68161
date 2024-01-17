@@ -45,19 +45,31 @@ namespace Library
                 {
                     MessageBox.Show("Successful!");
 
-                    Navigation navigation = new Navigation(login);
-                    navigation.Show();
+                    if (login == "Admin")
+                    {
+                        UserPageWindow userPageWindow = new UserPageWindow();
+                        userPageWindow.Show();
+                    }
+                    else
+                    {
+                        Navigation navigation = new Navigation(login);
+                        navigation.Show();
+                    }
+
                     Hide();
                 }
                 else
+                {
                     MessageBox.Show("You entered something incorrectly!");
+                }
             }
         }
 
+
         private void Button_Window_Reg_Click(object sender, RoutedEventArgs e)
         {
-            Navigation navigation = new Navigation();
-            navigation.Show();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             Hide();
         }
     }

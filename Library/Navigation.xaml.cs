@@ -11,5 +11,12 @@ namespace Library
             userName.Text = "User: " + username;
         }
 
+        private void Button_Search_Book_Click(object sender, RoutedEventArgs e)
+        {
+            BookSearch bookSearch = new BookSearch();
+            bookSearch.Show();
+            Hide();
+
+        }
     }
 }

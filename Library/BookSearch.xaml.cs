@@ -14,16 +14,14 @@ using System.Windows.Shapes;
 
 namespace Library
 {
-    public partial class UserPageWindow : Window
+    /// <summary>
+    /// Логика взаимодействия для BookSearch.xaml
+    /// </summary>
+    public partial class BookSearch : Window
     {
-        public UserPageWindow()
+        public BookSearch()
         {
             InitializeComponent();
-
-            ApplicationContext db = new ApplicationContext();
-            List<User> users = db.Users.ToList();
-
-            listOfUsers.ItemsSource = users;
         }
     }
 }
