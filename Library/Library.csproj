@@ -83,6 +83,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdminNavigation.xaml.cs">
+      <DependentUpon>AdminNavigation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ApplicationContext.cs" />
     <Compile Include="AuthWindow.xaml.cs">
       <DependentUpon>AuthWindow.xaml</DependentUpon>
@@ -97,6 +100,10 @@
     <Compile Include="UserPageWindow.xaml.cs">
       <DependentUpon>UserPageWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="AdminNavigation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AuthWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

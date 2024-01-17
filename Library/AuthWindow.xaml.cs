@@ -47,16 +47,15 @@ namespace Library
 
                     if (login == "Admin")
                     {
-                        UserPageWindow userPageWindow = new UserPageWindow();
-                        userPageWindow.Show();
+                        AdminNavigation adminNavigation = new AdminNavigation();
+                        adminNavigation.Show();
                     }
                     else
                     {
                         Navigation navigation = new Navigation(login);
                         navigation.Show();
                     }
-
-                    Hide();
+                    Close();
                 }
                 else
                 {
@@ -70,7 +69,6 @@ namespace Library
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
-            Hide();
         }
     }
 }

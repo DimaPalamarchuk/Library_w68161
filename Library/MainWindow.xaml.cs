@@ -80,7 +80,7 @@ namespace Library
 
                 AuthWindow authWindow = new AuthWindow();
                 authWindow.Show();
-                Hide();
+                Close();
             }
 
         }
@@ -89,7 +89,7 @@ namespace Library
         {
             AuthWindow authWindow = new AuthWindow();
             authWindow.Show();
-            Hide();
+            Close();
         }
     }
 }

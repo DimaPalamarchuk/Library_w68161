@@ -15,8 +15,14 @@ namespace Library
         {
             BookSearch bookSearch = new BookSearch();
             bookSearch.Show();
-            Hide();
+            Close();
+        }
 
+        private void Button_Click_Exit(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Close();
         }
     }
 }
