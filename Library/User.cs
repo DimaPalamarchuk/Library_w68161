@@ -32,11 +32,12 @@ namespace Library
 
         public User() { }
 
-        public User(string login,string email,string pass) {
+        public User(string login, string email, string pass)
+        {
             this.login = login;
             this.email = email;
             this.pass = pass;
-        
+
         }
 
         public override string ToString()

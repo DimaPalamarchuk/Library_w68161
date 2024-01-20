@@ -4,14 +4,42 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
-        mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:materialDesignIcons="http://materialdesignicons.com/winfx/xaml/themes"
+        mc:Ignorable="d"
         Title="Bookshelf" Height="600" Width="1000">
     <Grid>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <DataGrid x:Name="dgBookshelf" AutoGenerateColumns="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,20,0,0" IsReadOnly="True"/>
-            <Button Content="Back" Width="100" Height="30" Background="#FFB73F3A" BorderBrush="White" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Click="Button_Click_Back"/>
-        </StackPanel>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/image1.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" HorizontalAlignment="Left" Margin="408,30,0,0" TextWrapping="Wrap" Text="Bookshelf" VerticalAlignment="Top" FontSize="32" FontFamily="Century Gothic" FontWeight="Bold" Foreground="White">
+            <TextBlock.Effect>
+                <DropShadowEffect BlurRadius="10" Color="LightGray"/>
+            </TextBlock.Effect>
+        </TextBlock>
+
+        <DataGrid x:Name="dgBookshelf" AutoGenerateColumns="False" IsReadOnly="True" Style="{StaticResource MaterialDesignDataGrid}" Grid.Row="1" Margin="10 10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Title" Binding="{Binding Title}" />
+                <DataGridTextColumn Header="Author" Binding="{Binding Author}" />
+                <DataGridTextColumn Header="Available" Binding="{Binding Available}" />
+                <DataGridTemplateColumn Header="Action">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Borrow" Width="80" Height="30" Background="#FFD4B16A" BorderBrush="{DynamicResource MaterialDesignBody}" FontFamily="Century Gothic" FontWeight="Bold" FontSize="14" Click="Button_Click_BorrowBook"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Content="Exit" HorizontalAlignment="Left" Margin="23,20,0,0" VerticalAlignment="Top" Height="47" Width="85" Background="#FFB73F3A" BorderBrush="White" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Click="Button_Click_Exit"/>
+
     </Grid>
 </Window>

@@ -7,8 +7,6 @@ namespace Library
         public Navigation(string username = "")
         {
             InitializeComponent();
-
-            userName.Text = "User: " + username;
         }
 
         private void Button_Search_Book_Click(object sender, RoutedEventArgs e)
@@ -25,11 +23,10 @@ namespace Library
             Close();
         }
 
-        private void Button_Click_BookShelf(object sender, RoutedEventArgs e)
+        private void Button_BookShelf(object sender, RoutedEventArgs e)
         {
             Bookshelf bookshelf = new Bookshelf();
             bookshelf.Show();
-            Close();
         }
     }
 }
