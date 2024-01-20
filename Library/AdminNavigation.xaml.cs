@@ -41,6 +41,7 @@ namespace Library
             BookSearchAdmin bookSearchAdmin = new BookSearchAdmin();
             bookSearchAdmin.Show();
             Close();
+
         }
 
     }

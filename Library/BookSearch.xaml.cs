@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SQLite;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Library
 {
@@ -14,20 +15,14 @@ namespace Library
             InitializeComponent();
         }
 
-        private void Button_Click_Back(object sender, RoutedEventArgs e)
-        {
-            Navigation navigation = new Navigation();
-            navigation.Show();
-            Close();
-        }
-
         private void Button_Click_Search(object sender, RoutedEventArgs e)
         {
-            string searchText = txtSearch.Text.Trim();
+            string selectedField = (cbSearchField.SelectedItem as ComboBoxItem).Content.ToString();
+            string searchTerm = tbSearchTerm.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(searchText))
+            if (string.IsNullOrEmpty(searchTerm))
             {
-                MessageBox.Show("Please enter search criteria.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Please enter a search term.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -37,18 +32,16 @@ namespace Library
                 {
                     connection.Open();
 
-                    string query = "SELECT * FROM Books WHERE title LIKE @searchText OR author LIKE @searchText;";
+                    string query = $"SELECT title, author, available FROM Books WHERE {selectedField} LIKE '%{searchTerm}%';";
 
                     using (SQLiteCommand command = new SQLiteCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
-
                         using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
                         {
                             DataTable dataTable = new DataTable();
                             adapter.Fill(dataTable);
 
-                            dgBooks.ItemsSource = dataTable.DefaultView;
+                            dgSearchResults.ItemsSource = dataTable.DefaultView;
                         }
                     }
                 }
@@ -57,6 +50,13 @@ namespace Library
             {
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void Button_Click_Back(object sender, RoutedEventArgs e)
+        {
+            Navigation navigation = new Navigation();
+            navigation.Show();
+            Close();
         }
     }
 }

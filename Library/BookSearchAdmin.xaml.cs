@@ -1,18 +1,20 @@
 ﻿using System;
-using System.Data;
+using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Data;
+using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Library
 {
     public partial class BookSearchAdmin : Window
     {
-        private string connectionString = "Data Source=LibraryDataBase.db;Version=3;";
+        private readonly string connectionString = "Data Source=LibraryDataBase.db;Version=3;";
 
         public BookSearchAdmin()
         {
             InitializeComponent();
-            LoadBookData();
         }
 
         private void Button_Click_Back(object sender, RoutedEventArgs e)
@@ -20,14 +22,14 @@ namespace Library
             // Добавьте код для возврата назад, если необходимо
         }
 
-        private void Button_Click_AddBook(object sender, RoutedEventArgs e)
+        private void Button_Click_Search(object sender, RoutedEventArgs e)
         {
-            string title = txtTitle.Text.Trim();
-            string author = txtAuthor.Text.Trim();
+            string searchTerm = tbSearchTerm.Text.Trim();
+            string searchField = (cbSearchField.SelectedItem as ComboBoxItem)?.Content.ToString();
 
-            if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(author))
+            if (searchField == null || searchTerm.Length == 0)
             {
-                MessageBox.Show("Please enter both title and author.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Please select a search field and enter a search term.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -37,18 +39,19 @@ namespace Library
                 {
                     connection.Open();
 
-                    // Выполняем SQL-запрос для добавления новой книги в базу данных
-                    string query = "INSERT INTO Books (title, author, available) VALUES (@title, @author, 1);";
+                    string query = $"SELECT * FROM Books WHERE {searchField.ToLower()} LIKE '%' || @searchTerm || '%';";
 
                     using (SQLiteCommand command = new SQLiteCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@title", title);
-                        command.Parameters.AddWithValue("@author", author);
+                        command.Parameters.AddWithValue("@searchTerm", searchTerm);
 
-                        command.ExecuteNonQuery();
+                        using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
+                        {
+                            DataTable dataTable = new DataTable();
+                            adapter.Fill(dataTable);
 
-                        // После добавления обновляем отображение списка книг
-                        LoadBookData();
+                            dgSearchResults.ItemsSource = dataTable.DefaultView;
+                        }
                     }
                 }
             }
@@ -58,34 +61,10 @@ namespace Library
             }
         }
 
-        private void LoadBookData()
+        private void Button_Click_AddBook(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
-                {
-                    connection.Open();
-
-                    // Выполняем SQL-запрос для получения всех книг из базы данных
-                    string query = "SELECT * FROM Books;";
-
-                    using (SQLiteCommand command = new SQLiteCommand(query, connection))
-                    {
-                        using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
-                        {
-                            DataTable dataTable = new DataTable();
-                            adapter.Fill(dataTable);
-
-                            // Заполняем DataGrid данными из базы данных
-                            dgBooks.ItemsSource = dataTable.DefaultView;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            NewBook newBook = new NewBook();
+            newBook.Show();
         }
     }
 }
