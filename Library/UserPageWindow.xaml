@@ -19,6 +19,7 @@
                 <ListView x:Name="listOfUsers" Margin="10"/>
             </StackPanel>
         </Border>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="47" Width="85" Background="#FFB73F3A" BorderBrush="White" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Click="Button_Click_Back"/>
 
     </Grid>
 </Window>

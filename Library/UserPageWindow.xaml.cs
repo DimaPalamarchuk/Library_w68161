@@ -25,5 +25,12 @@ namespace Library
 
             listOfUsers.ItemsSource = users;
         }
+
+        private void Button_Click_Back(object sender, RoutedEventArgs e)
+        {
+            AdminNavigation adminNavigation = new AdminNavigation();
+            adminNavigation.Show();
+            Close();
+        }
     }
 }

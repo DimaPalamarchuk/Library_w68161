@@ -29,7 +29,7 @@
             <StackPanel MinHeight="100" MaxHeight="254" Background="#FFFAFAFA" Margin="25 0 100 0">
                 <materialDesign:PackIcon Kind="Book" Height="100" Width="100" Margin="0 55 0 0"/>
                 <TextBlock Text="Books" Margin="0 5 0 0" HorizontalAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16"/>
-                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" BorderBrush="White" Background="#FFD4B16A"/>
+                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" BorderBrush="White" Background="#FFD4B16A" Click="Button_Click_BooksAdmin"/>
             </StackPanel>
 
             <StackPanel MinHeight="100" MaxHeight="254" Background="White" Margin="0 0 100 0">
@@ -57,6 +57,6 @@
             </StackPanel>
         </WrapPanel>
 
-        <Button Content="Exit" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="47" Width="85" Background="#FFB73F3A" BorderBrush="White" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Click="Button_Click_Exit"/>
+        <Button Content="Exit" HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" Height="47" Width="85" Background="#FFB73F3A" BorderBrush="White" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Click="Button_Click_Exit" Grid.RowSpan="2"/>
     </Grid>
 </Window>

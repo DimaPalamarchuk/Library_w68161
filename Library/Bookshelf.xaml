@@ -1,0 +1,17 @@
+﻿<Window x:Class="Library.Bookshelf"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:materialDesignIcons="http://materialdesignicons.com/winfx/xaml/themes"
+        Title="Bookshelf" Height="600" Width="1000">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <DataGrid x:Name="dgBookshelf" AutoGenerateColumns="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,20,0,0" IsReadOnly="True"/>
+            <Button Content="Back" Width="100" Height="30" Background="#FFB73F3A" BorderBrush="White" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Click="Button_Click_Back"/>
+        </StackPanel>
+    </Grid>
+</Window>

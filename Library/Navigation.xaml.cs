@@ -24,5 +24,12 @@ namespace Library
             mainWindow.Show();
             Close();
         }
+
+        private void Button_Click_BookShelf(object sender, RoutedEventArgs e)
+        {
+            Bookshelf bookshelf = new Bookshelf();
+            bookshelf.Show();
+            Close();
+        }
     }
 }

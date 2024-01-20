@@ -36,5 +36,12 @@ namespace Library
             Close();
         }
 
+        private void Button_Click_BooksAdmin(object sender, RoutedEventArgs e)
+        {
+            BookSearchAdmin bookSearchAdmin = new BookSearchAdmin();
+            bookSearchAdmin.Show();
+            Close();
+        }
+
     }
 }

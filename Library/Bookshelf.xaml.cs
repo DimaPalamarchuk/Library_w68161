@@ -5,50 +5,42 @@ using System.Windows;
 
 namespace Library
 {
-    public partial class BookSearch : Window
+    public partial class Bookshelf : Window
     {
         private string connectionString = "Data Source=LibraryDataBase.db;Version=3;";
 
-        public BookSearch()
+        public Bookshelf()
         {
             InitializeComponent();
+
+            LoadBookshelfData();
         }
 
         private void Button_Click_Back(object sender, RoutedEventArgs e)
         {
-            Navigation navigation = new Navigation();
-            navigation.Show();
-            Close();
+            // Добавьте код для возврата назад, если необходимо
         }
 
-        private void Button_Click_Search(object sender, RoutedEventArgs e)
+        private void LoadBookshelfData()
         {
-            string searchText = txtSearch.Text.Trim();
-
-            if (string.IsNullOrWhiteSpace(searchText))
-            {
-                MessageBox.Show("Please enter search criteria.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-
             try
             {
                 using (SQLiteConnection connection = new SQLiteConnection(connectionString))
                 {
                     connection.Open();
 
-                    string query = "SELECT * FROM Books WHERE title LIKE @searchText OR author LIKE @searchText;";
+                    // Выполняем SQL-запрос для получения всех книг из базы данных
+                    string query = "SELECT * FROM Books;";
 
                     using (SQLiteCommand command = new SQLiteCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
-
                         using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
                         {
                             DataTable dataTable = new DataTable();
                             adapter.Fill(dataTable);
 
-                            dgBooks.ItemsSource = dataTable.DefaultView;
+                            // Заполняем DataGrid данными из базы данных
+                            dgBookshelf.ItemsSource = dataTable.DefaultView;
                         }
                     }
                 }
