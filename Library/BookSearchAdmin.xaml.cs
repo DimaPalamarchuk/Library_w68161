@@ -19,7 +19,7 @@ namespace Library
 
         private void Button_Click_Back(object sender, RoutedEventArgs e)
         {
-            // Добавьте код для возврата назад, если необходимо
+
         }
 
         private void Button_Click_Search(object sender, RoutedEventArgs e)

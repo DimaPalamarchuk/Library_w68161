@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Library
+﻿namespace Library
 {
-    class User
+    public class User
     {
         public int id { get; set; }
 
@@ -37,7 +31,6 @@ namespace Library
             this.login = login;
             this.email = email;
             this.pass = pass;
-
         }
 
         public override string ToString()

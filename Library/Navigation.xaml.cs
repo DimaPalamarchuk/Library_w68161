@@ -4,9 +4,17 @@ namespace Library
 {
     public partial class Navigation : Window
     {
+        private User currentUser;
+
         public Navigation(string username = "")
         {
             InitializeComponent();
+        }
+
+        public Navigation(User currentUser)
+        {
+            InitializeComponent();
+            this.currentUser = currentUser;
         }
 
         private void Button_Search_Book_Click(object sender, RoutedEventArgs e)
@@ -25,8 +33,9 @@ namespace Library
 
         private void Button_BookShelf(object sender, RoutedEventArgs e)
         {
-            Bookshelf bookshelf = new Bookshelf();
+            Bookshelf bookshelf = new Bookshelf(currentUser);
             bookshelf.Show();
+            Close();
         }
     }
 }

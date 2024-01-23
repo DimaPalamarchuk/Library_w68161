@@ -27,7 +27,7 @@
 
         <WrapPanel Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,0,10,0" Orientation="Horizontal">
             <StackPanel MinHeight="100" MaxHeight="254" Background="#FFFAFAFA" Margin="25 0 100 0">
-                <materialDesign:PackIcon Kind="Book" Height="100" Width="100" Margin="0 55 0 0"/>
+                <materialDesign:PackIcon Kind="BookSearch" Height="100" Width="100" Margin="0 55 0 0"/>
                 <TextBlock Text="Books" Margin="0 5 0 0" HorizontalAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16"/>
                 <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" BorderBrush="White" Background="#FFD4B16A" Click="Button_Click_BooksAdmin"/>
             </StackPanel>
@@ -45,14 +45,14 @@
             </StackPanel>
 
             <StackPanel MinHeight="100" MaxHeight="254" Background="White" Margin="0 0 100 0">
-                <materialDesign:PackIcon Kind="Bookmark" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 55 0 0"/>
-                <TextBlock Text="Bookmark" Margin="0,5,0,0" HorizontalAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16"/>
-                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Background="#FFD4B16A" BorderBrush="White"/>
+                <materialDesign:PackIcon Kind="BookAccount" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 55 0 0"/>
+                <TextBlock Text="Borrowed Books" Margin="0,5,0,0" HorizontalAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16"/>
+                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Background="#FFD4B16A" BorderBrush="White" Click="Button_AdminView"/>
             </StackPanel>
 
             <StackPanel MinHeight="100" MaxHeight="254" Background="White" Margin="0 0 0 0">
-                <materialDesign:PackIcon Kind="Users" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 55 0 0"/>
-                <TextBlock Text="Users" Margin="0,5,0,0" HorizontalAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16"/>
+                <materialDesign:PackIcon Kind="Database" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 55 0 0"/>
+                <TextBlock Text="Data Base" Margin="0,5,0,0" HorizontalAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16"/>
                 <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" BorderBrush="White" Background="#FFD4B16A" Click="Button_Users"/>
             </StackPanel>
         </WrapPanel>

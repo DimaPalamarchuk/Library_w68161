@@ -1,138 +1,214 @@
 ﻿using System;
-using System.Collections.ObjectModel;
-using System.Data.SQLite;
+using System.Data;
+using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
+using System.Data.Entity;
+using System.Data.SQLite;
 
 namespace Library
 {
     public partial class Bookshelf : Window
     {
-        private readonly string connectionString = "Data Source=LibraryDataBase.db;Version=3;";
-        private ObservableCollection<Book> books;
+        private string connectionString = "Data Source=LibraryDataBase.db;Version=3;";
 
-        public Bookshelf()
+        private User currentUser;
+
+        public Bookshelf(User user)
         {
             InitializeComponent();
+            currentUser = user;
             LoadBooks();
-            dgBookshelf.ItemsSource = books;
         }
 
         private void LoadBooks()
         {
-            books = new ObservableCollection<Book>();
-
             try
             {
                 using (SQLiteConnection connection = new SQLiteConnection(connectionString))
                 {
                     connection.Open();
 
-                    string query = "SELECT * FROM Books;";
+                    string query = "SELECT id, title, author, available FROM Books;";
 
                     using (SQLiteCommand command = new SQLiteCommand(query, connection))
                     {
-                        using (SQLiteDataReader reader = command.ExecuteReader())
+                        using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(command))
                         {
-                            while (reader.Read())
-                            {
-                                string title = reader["title"].ToString();
-                                string author = reader["author"].ToString();
-                                int available = Convert.ToInt32(reader["available"]);
+                            DataTable dataTable = new DataTable();
+                            adapter.Fill(dataTable);
 
-                                books.Add(new Book { Title = title, Author = author, Available = available });
-                            }
+                            dgBookshelf.ItemsSource = dataTable.DefaultView;
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
-        // ... (ваш код)
-
-        private void Button_Click_BorrowBook(object sender, RoutedEventArgs e)
+        private void Button_Click_Borrow(object sender, RoutedEventArgs e)
         {
-            if (dgBookshelf.SelectedItem != null)
+            DataRowView selectedBook = dgBookshelf.SelectedItem as DataRowView;
+
+            if (selectedBook != null)
             {
-                Book selectedBook = (Book)dgBookshelf.SelectedItem;
-
-                if (selectedBook.Available > 0)
+                try
                 {
-                    // Уменьшаем значение Available на 1
-                    selectedBook.Available--;
+                    int bookId = Convert.ToInt32(selectedBook["id"]);
+                    string bookTitle = selectedBook["title"].ToString();
 
-                    // Обновляем отображение в DataGrid
-                    dgBookshelf.Items.Refresh();
+                    string userInput = GetUserInput("Enter user login:");
 
-                    // Теперь вы можете добавить код для записи изменений в базу данных,
-                    // чтобы сохранить уменьшение значения Available.
-                    // Обновите вашу базу данных в соответствии с изменением состояния книги.
-
-                    // Пример:
-                    UpdateBookAvailabilityInDatabase(selectedBook.Title, selectedBook.Available);
-                }
-                else
-                {
-                    MessageBox.Show("This book is not available.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
-            }
-        }
-
-        private void UpdateBookAvailabilityInDatabase(string bookTitle, int newAvailability)
-        {
-            try
-            {
-                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
-                {
-                    connection.Open();
-
-                    string query = "UPDATE Books SET available = @newAvailability WHERE title = @bookTitle;";
-
-                    using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                    if (!string.IsNullOrEmpty(userInput))
                     {
-                        command.Parameters.AddWithValue("@newAvailability", newAvailability);
-                        command.Parameters.AddWithValue("@bookTitle", bookTitle);
+                        User user = GetUserByLogin(userInput);
 
-                        int result = command.ExecuteNonQuery();
-
-                        if (result > 0)
+                        if (user != null)
                         {
-                            // Обновление в базе данных выполнено успешно
+                            AddBorrowedBook(bookTitle, user.Login);
+                            UpdateBookAvailabilityLocal(bookTitle, -1);
+
+                            MessageBox.Show($"Book '{bookTitle}' borrowed by {user.Login}.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                         }
                         else
                         {
-                            MessageBox.Show("Failed to update book availability in the database.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                            MessageBox.Show($"User with login '{userInput}' not found.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a user login.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error borrowing book: {ex.Message}");
+                    MessageBox.Show($"An error occurred while borrowing the book. See the console for details.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a book to borrow.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void Button_Click_Return(object sender, RoutedEventArgs e)
+        {
+            DataRowView selectedBook = dgBookshelf.SelectedItem as DataRowView;
+
+            if (selectedBook != null)
+            {
+                int bookId = Convert.ToInt32(selectedBook["id"]);
+                string bookTitle = selectedBook["title"].ToString();
+
+                ReturnBook(bookTitle);
+
+                UpdateBookAvailabilityLocal(bookTitle, 1);
+
+                MessageBox.Show($"Book '{bookTitle}' returned. Thank you!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("Please select a book to return.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void UpdateBookAvailabilityLocal(string bookTitle, int change)
+        {
+            DataRowView selectedBook = dgBookshelf.SelectedItem as DataRowView;
+
+            if (selectedBook != null)
+            {
+                int currentIndex = dgBookshelf.Items.IndexOf(selectedBook);
+                DataRowView updatedBook = dgBookshelf.Items[currentIndex] as DataRowView;
+                int currentAvailable = Convert.ToInt32(updatedBook["available"]);
+                updatedBook["available"] = Math.Max(0, currentAvailable + change);
+            }
+        }
+
+        private string GetUserInput(string prompt)
+        {
+            InputDialog inputDialog = new InputDialog(prompt);
+            if (inputDialog.ShowDialog() == true)
+            {
+                return inputDialog.Answer;
+            }
+            return null;
+        }
+
+        private User GetUserByLogin(string login)
+        {
+            using (ApplicationContext context = new ApplicationContext())
+            {
+                return context.Users.FirstOrDefault(u => u.Login == login);
+            }
+        }
+
+        private void AddBorrowedBook(string bookTitle, string userLogin)
+        {
+            try
+            {
+                using (ApplicationContext context = new ApplicationContext())
+                {
+                    Book book = context.Books.FirstOrDefault(b => b.Title == bookTitle);
+
+                    if (book != null)
+                    {
+                        BorrowedBook borrowedBook = new BorrowedBook
+                        {
+                            BookName = book.Title,
+                            UserName = GetUserByLogin(userLogin)?.Login
+                        };
+
+                        context.BorrowedBooks.Add(borrowedBook);
+                        context.SaveChanges();
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Book with title '{bookTitle}' not found.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Console.WriteLine($"Error adding borrowed book: {ex.Message}");
+                MessageBox.Show($"An error occurred while adding the borrowed book. See the console for details.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
-        // ... (ваш код)
-
-
-        private void Button_Click_Exit(object sender, RoutedEventArgs e)
+        private void ReturnBook(string bookTitle)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            try
+            {
+                using (ApplicationContext context = new ApplicationContext())
+                {
+                    BorrowedBook borrowedBook = context.BorrowedBooks.FirstOrDefault(bb => bb.BookName == bookTitle);
+
+                    if (borrowedBook != null)
+                    {
+                        context.BorrowedBooks.Remove(borrowedBook);
+                        context.SaveChanges();
+                    }
+                    else
+                    {
+                        MessageBox.Show($"No record found for book '{bookTitle}' in BorrowedBooks.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error returning book: {ex.Message}");
+                MessageBox.Show($"An error occurred while returning the book. See the console for details.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void Button_Click_Back(object sender, RoutedEventArgs e)
+        {
+            Navigation navigation = new Navigation(currentUser);
+            navigation.Show();
             Close();
         }
-    }
-
-    public class Book
-    {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public string Author { get; set; }
-        public int Available { get; set; }
-        public int UserId { get; set; }
     }
 }

@@ -14,9 +14,10 @@
                 <DropShadowEffect BlurRadius= "30" Color= "LightGray" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel Height="290" VerticalAlignment="Top">
-                <TextBlock Text="User account" FontSize="34" FontWeight="Bold" FontFamily="Century Gothic" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Text="DataBase" FontSize="34" FontWeight="Bold" FontFamily="Century Gothic" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
                 <ListView x:Name="listOfUsers" Margin="10"/>
+                <ListView x:Name="listOfBooks" Margin="20"/>
             </StackPanel>
         </Border>
         <Button Content="Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="47" Width="85" Background="#FFB73F3A" BorderBrush="White" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Click="Button_Click_Back"/>

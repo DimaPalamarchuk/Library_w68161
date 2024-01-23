@@ -21,7 +21,6 @@
                     <DataGridTextColumn Header="Title" Binding="{Binding title}" />
                     <DataGridTextColumn Header="Author" Binding="{Binding author}" />
                     <DataGridTextColumn Header="Available" Binding="{Binding available}" />
-                    <!-- Другие столбцы, если они есть -->
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>

@@ -23,11 +23,10 @@
                     <DataGridTextColumn Header="Title" Binding="{Binding title}" />
                     <DataGridTextColumn Header="Author" Binding="{Binding author}" />
                     <DataGridTextColumn Header="Available" Binding="{Binding available}" />
-                    <!-- Другие столбцы, если они есть -->
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
         <TextBlock HorizontalAlignment="Center" Height="48" Margin="0,10,0,0" TextWrapping="Wrap" Text="Book Search" VerticalAlignment="Top" Width="212" FontFamily="Century Gothic" FontSize="32" FontWeight="Bold"/>
-        <Button Content="Add Book" Height="30" Background="#FF4CAF50" BorderBrush="{DynamicResource MaterialDesignBody}" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Click="Button_Click_AddBook" Margin="10,57,879,497"/>
+        <Button Content="Add Book" MinHeight="30" MaxHeight="150" MinWidth="70" MaxWidth="150" Background="#FF4CAF50" BorderBrush="{DynamicResource MaterialDesignBody}" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Click="Button_Click_AddBook" Margin="10,45,883,507"/>
     </Grid>
 </Window>

@@ -22,8 +22,10 @@ namespace Library
 
             ApplicationContext db = new ApplicationContext();
             List<User> users = db.Users.ToList();
+            List<Book> books = db.Books.ToList();
 
             listOfUsers.ItemsSource = users;
+            listOfBooks.ItemsSource = books;
         }
 
         private void Button_Click_Back(object sender, RoutedEventArgs e)

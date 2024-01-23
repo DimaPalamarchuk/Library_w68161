@@ -44,5 +44,11 @@ namespace Library
 
         }
 
+        private void Button_AdminView(object sender, RoutedEventArgs e)
+        {
+            AdminViewBorrowed adminViewBorrowed = new AdminViewBorrowed();
+            adminViewBorrowed.Show();
+            Close();
+        }
     }
 }

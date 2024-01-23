@@ -86,10 +86,14 @@
     <Compile Include="AdminNavigation.xaml.cs">
       <DependentUpon>AdminNavigation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AdminViewBorrowed.xaml.cs">
+      <DependentUpon>AdminViewBorrowed.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ApplicationContext.cs" />
     <Compile Include="AuthWindow.xaml.cs">
       <DependentUpon>AuthWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Book.cs" />
     <Compile Include="BookSearch.xaml.cs">
       <DependentUpon>BookSearch.xaml</DependentUpon>
     </Compile>
@@ -98,6 +102,10 @@
     </Compile>
     <Compile Include="Bookshelf.xaml.cs">
       <DependentUpon>Bookshelf.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BorrowedBook.cs" />
+    <Compile Include="InputDialog.xaml.cs">
+      <DependentUpon>InputDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Navigation.xaml.cs">
       <DependentUpon>Navigation.xaml</DependentUpon>
@@ -110,6 +118,10 @@
       <DependentUpon>UserPageWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="AdminNavigation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminViewBorrowed.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -126,6 +138,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Bookshelf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InputDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -187,6 +203,7 @@
   <ItemGroup>
     <Resource Include="Images\image1.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
