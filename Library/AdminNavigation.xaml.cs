@@ -48,7 +48,6 @@ namespace Library
         {
             AdminViewBorrowed adminViewBorrowed = new AdminViewBorrowed();
             adminViewBorrowed.Show();
-            Close();
         }
     }
 }

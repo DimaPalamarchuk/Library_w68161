@@ -8,7 +8,8 @@
         mc:Ignorable="d"
         Title="Book Search Admin" Height="600" Width="1000">
     <Grid>
-        <Button Content="Back" Height="30" Background="#FFD11E1E" BorderBrush="{DynamicResource MaterialDesignBody}" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Click="Button_Click_Back" Margin="10,10,879,544"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="21,26,0,0" VerticalAlignment="Top" Height="47" Width="96" Background="#FFB73F3A" BorderBrush="White" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Click="Button_Click_Back"/>
+        <Button Content="Add New Book" HorizontalAlignment="Left" Margin="21,78,0,0" VerticalAlignment="Top" Height="47" Width="149" Background="#FF4CAF50" BorderBrush="White" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Click="Button_Click_AddBook"/>
         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Height="496" Margin="0,78,0,0" Width="550">
             <ComboBox x:Name="cbSearchField" Width="200" Height="48" Margin="0,0,0,10" SelectedIndex="0" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                 <ComboBoxItem Content="Title" FontFamily="Century Gothic" FontSize="12"/>
@@ -27,6 +28,6 @@
             </DataGrid>
         </StackPanel>
         <TextBlock HorizontalAlignment="Center" Height="48" Margin="0,10,0,0" TextWrapping="Wrap" Text="Book Search" VerticalAlignment="Top" Width="212" FontFamily="Century Gothic" FontSize="32" FontWeight="Bold"/>
-        <Button Content="Add Book" MinHeight="30" MaxHeight="150" MinWidth="70" MaxWidth="150" Background="#FF4CAF50" BorderBrush="{DynamicResource MaterialDesignBody}" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Click="Button_Click_AddBook" Margin="10,45,883,507"/>
+       
     </Grid>
 </Window>

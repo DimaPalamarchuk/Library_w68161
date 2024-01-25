@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="Book Search" Height="600" Width="1000">
     <Grid>
-        <Button Content="Back" Width="100" Height="30" Background="#FFD11E1E" BorderBrush="{DynamicResource MaterialDesignBody}" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Click="Button_Click_Back" Margin="10,10,890,544"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="21,26,0,0" VerticalAlignment="Top" Height="47" Width="96" Background="#FFB73F3A" BorderBrush="White" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Click="Button_Click_Back"/>
         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Height="496" Margin="0,78,0,0" Width="550">
             <ComboBox x:Name="cbSearchField" Width="200" Height="48" Margin="0,0,0,10" SelectedIndex="0" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                 <ComboBoxItem Content="Title" FontFamily="Century Gothic" FontSize="12"/>

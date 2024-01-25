@@ -8,7 +8,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="MainWindow" Height="600" Width="1000">
     <Grid>
-        <Image Source="Images/image1.png" Stretch="Fill"/>
+        <Image Source="Images/image2.jpg" Stretch="Fill"/>
         <Border MinWidth="300" Margin="15,15,15,33" Background="White" Padding="30" MaxWidth="550" CornerRadius="20" MinHeight="250" MaxHeight="350" RenderTransformOrigin="0.499,1.081">
             <Border.Effect>
                 <DropShadowEffect BlurRadius= "30" Color= "LightGray" ShadowDepth="0"/>

@@ -69,6 +69,7 @@ namespace Library
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
+            Close();
         }
     }
 }

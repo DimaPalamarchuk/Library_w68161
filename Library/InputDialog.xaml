@@ -5,6 +5,6 @@
     <Grid>
         <Label x:Name="lblQuestion" Content="Question" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
         <TextBox x:Name="txtAnswer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,30,0,0" Width="250"/>
-        <Button x:Name="btnDialogOk" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,70,0,0" Click="btnDialogOk_Click"/>
+        <Button x:Name="btnDialogOk" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,70,0,0" Click="btnDialogOk_Click" Background="#FFFF8300" BorderBrush="#FFE37F15"/>
     </Grid>
 </Window>

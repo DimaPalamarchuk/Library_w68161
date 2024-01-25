@@ -18,7 +18,10 @@ namespace Library
         }
 
         private void Button_Click_Back(object sender, RoutedEventArgs e)
-        {
+        {      
+            AdminNavigation adminNaviog = new AdminNavigation();
+            adminNaviog.Show();
+            Close();
 
         }
 
@@ -66,5 +69,6 @@ namespace Library
             NewBook newBook = new NewBook();
             newBook.Show();
         }
+
     }
 }
