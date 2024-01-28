@@ -16,12 +16,12 @@ namespace Library
 {
     public partial class NewPasswordWindow : Window
     {
-        // Constructor to initialize with the user whose password is being reset
+        private User user;
+
         public NewPasswordWindow(User user)
         {
             InitializeComponent();
-
-            // You can use the provided user information if needed
+            this.user = user;
         }
 
         private void Button_Submit_Click(object sender, RoutedEventArgs e)
@@ -31,22 +31,33 @@ namespace Library
 
             if (newPassword.Length < 5)
             {
-                // Handle validation, show error message, etc.
                 MessageBox.Show("Password should be at least 5 characters long.");
                 return;
             }
 
             if (newPassword != confirmNewPassword)
             {
-                // Handle validation, show error message, etc.
                 MessageBox.Show("Passwords do not match.");
                 return;
             }
 
-            // TODO: Add logic to update the user's password in the database
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                User userToUpdate = db.Users.FirstOrDefault(u => u.Login == user.Login);
 
-            MessageBox.Show("Password updated successfully!");
-            Close();
+                if (userToUpdate != null)
+                {
+                    userToUpdate.Pass = newPassword;
+                    db.SaveChanges();
+
+                    MessageBox.Show("Password updated successfully!");
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("User not found in the database.");
+                }
+            }
         }
 
         private void Button_Cancel_Click(object sender, RoutedEventArgs e)
