@@ -9,15 +9,15 @@
         xmlns:materialDesignIcons="http://materialdesignicons.com/winfx/xaml/themes"
         Title="New Book" Height="400" Width="600">
     <Grid>
-
+        <Image Source="Images/image2.png" Stretch="Fill"/>
         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Height="350" Width="500">
-            <TextBlock Text="Add New Book" FontSize="24" FontWeight="Bold" Margin="0,10,0,20" HorizontalAlignment="Center"/>
+            <TextBlock Text="Add New Book" FontSize="24" FontWeight="Bold" Margin="0,10,0,20" HorizontalAlignment="Center" FontFamily="Gothic Century"/>
 
-            <TextBox x:Name="tbTitle" Margin="10" Height="41" materialDesign:HintAssist.Hint="Title" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-            <TextBox x:Name="tbAuthor" Margin="10" Height="42" materialDesign:HintAssist.Hint="Author" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-            <TextBox x:Name="tbAvailable" Margin="10" Height="41" materialDesign:HintAssist.Hint="Available" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <TextBox x:Name="tbTitle" Margin="10" Height="41" materialDesign:HintAssist.Hint="Title" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Century Gothic" CaretBrush="#FFFF8300" SelectionBrush="#FFFF8300"/>
+            <TextBox x:Name="tbAuthor" Margin="10" Height="42" materialDesign:HintAssist.Hint="Author" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Century Gothic" SelectionBrush="#FFFF8300" CaretBrush="#FFFF8300"/>
+            <TextBox x:Name="tbAvailable" Margin="10" Height="41" materialDesign:HintAssist.Hint="Available" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Century Gothic" CaretBrush="#FFFF8300" SelectionBrush="#FFFF8300"/>
 
-            <Button Content="Add Book" Width="150" Height="40" Background="#FFD4B16A" BorderBrush="{DynamicResource MaterialDesignBody}" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Click="Button_Click_AddBook" Margin="0,20,0,0"/>
+            <Button Content="Add Book" Width="150" Height="40" Background="#FFFF8300" BorderBrush="#FFFF8300" FontFamily="Century Gothic" FontSize="16" Click="Button_Click_AddBook" Margin="0,20,0,0"/>
         </StackPanel>
     </Grid>
 </Window>

@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="AdminViewBorrowed" Height="450" Width="600">
     <Grid>
-        <DataGrid x:Name="dgBorrowedBooks" AutoGenerateColumns="True" IsReadOnly="True" Margin="10 10"/>
+        <DataGrid x:Name="dgBorrowedBooks" AutoGenerateColumns="True" IsReadOnly="True" Margin="10 10" FontFamily="Century Gothic"/>
     </Grid>
 </Window>

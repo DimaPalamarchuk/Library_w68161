@@ -8,17 +8,17 @@
         mc:Ignorable="d"
         Title="Bookshelf" Height="600" Width="1000">
     <Grid>
-        <Button Content="Back" HorizontalAlignment="Left" Margin="21,26,0,0" VerticalAlignment="Top" Height="47" Width="96" Background="#FFB73F3A" BorderBrush="White" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Click="Button_Click_Back"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="21,26,0,0" VerticalAlignment="Top" Height="47" Width="96" Background="#FFB73F3A" BorderBrush="White" FontFamily="Century Gothic" FontSize="16" Click="Button_Click_Back"/>
         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Height="496" Margin="0,78,0,0" Width="550">
-            <DataGrid x:Name="dgBookshelf" AutoGenerateColumns="False" IsReadOnly="True" Style="{StaticResource MaterialDesignDataGrid}" Margin="10 10" Width="413">
+            <DataGrid x:Name="dgBookshelf" AutoGenerateColumns="False" IsReadOnly="True" Style="{StaticResource MaterialDesignDataGrid}" Margin="10 10" Width="413" FontFamily="Century Gothic">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Title" Binding="{Binding title}" />
                     <DataGridTextColumn Header="Author" Binding="{Binding author}" />
                     <DataGridCheckBoxColumn Header="Available" Binding="{Binding available}" />
                 </DataGrid.Columns>
             </DataGrid>
-            <Button Content="Borrow Book" Width="150" Height="30" Background="#FFD4B16A" BorderBrush="{DynamicResource MaterialDesignBody}" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Click="Button_Click_Borrow"/>
-            <Button Content="Return Book" Width="150" Height="30" Background="#FFD4B16A" BorderBrush="{DynamicResource MaterialDesignBody}" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Click="Button_Click_Return" Margin="0,10,0,0"/>
+            <Button Content="Borrow Book" Width="150" Height="30" Background="#FFD4B16A" BorderBrush="{DynamicResource MaterialDesignBody}" FontFamily="Century Gothic" FontSize="16" Click="Button_Click_Borrow"/>
+            <Button Content="Return Book" Width="150" Height="30" Background="#FFD4B16A" BorderBrush="{DynamicResource MaterialDesignBody}" FontFamily="Century Gothic" FontSize="16" Click="Button_Click_Return" Margin="0,10,0,0"/>
         </StackPanel>
         <TextBlock HorizontalAlignment="Center" Height="48" Margin="0,10,0,0" TextWrapping="Wrap" Text="Bookshelf" VerticalAlignment="Top" Width="212" FontFamily="Century Gothic" FontSize="32" FontWeight="Bold"/>
     </Grid>

@@ -25,35 +25,29 @@
             </TextBlock.Effect>
         </TextBlock>
 
-        <WrapPanel Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,0,10,0" Orientation="Horizontal">
+        <WrapPanel Grid.Row="1" VerticalAlignment="Top" Margin="150,178,0,0" Orientation="Horizontal" HorizontalAlignment="Left">
             <StackPanel MinHeight="100" MaxHeight="254" Background="#FFFAFAFA" Margin="25 0 100 0">
                 <materialDesign:PackIcon Kind="BookSearch" Height="100" Width="100" Margin="0 55 0 0"/>
                 <TextBlock Text="Books" Margin="0 5 0 0" HorizontalAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16"/>
-                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" BorderBrush="White" Background="#FF8300" Click="Button_Click_BooksAdmin"/>
-            </StackPanel>
-
-            <StackPanel MinHeight="100" MaxHeight="254" Background="White" Margin="0 0 100 0">
-                <materialDesign:PackIcon Kind="Library" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 55 0 0"/>
-                <TextBlock Text="Library" Margin="0,5,0,0" HorizontalAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16"/>
-                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Background="#FF8300" BorderBrush="White"/>
+                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontSize="16" BorderBrush="#FFFF8300" Background="#FF8300" Click="Button_Click_BooksAdmin"/>
             </StackPanel>
 
             <StackPanel MinHeight="100" MaxHeight="254" Background="White" Margin="0 0 100 0">
                 <materialDesign:PackIcon Kind="Bookshelf" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 55 0 0"/>
                 <TextBlock Text="Bookshelf" Margin="0,5,0,0" HorizontalAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16"/>
-                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" BorderBrush="White" Background="#FF8300"/>
+                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontSize="16" BorderBrush="#FFFF8300" Background="#FF8300"/>
             </StackPanel>
 
             <StackPanel MinHeight="100" MaxHeight="254" Background="White" Margin="0 0 100 0">
                 <materialDesign:PackIcon Kind="BookAccount" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 55 0 0"/>
-                <TextBlock Text="Borrowed Books" Margin="0,5,0,0" HorizontalAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16"/>
-                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Background="#FF8300" BorderBrush="White" Click="Button_AdminView"/>
+                <TextBlock Text="Borrowed Books" Margin="0,5,0,0" HorizontalAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Width="73"/>
+                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontSize="16" Background="#FF8300" BorderBrush="#FFFF8300" Click="Button_AdminView"/>
             </StackPanel>
 
             <StackPanel MinHeight="100" MaxHeight="254" Background="White" Margin="0 0 0 0">
                 <materialDesign:PackIcon Kind="Database" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 55 0 0"/>
                 <TextBlock Text="Data Base" Margin="0,5,0,0" HorizontalAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16"/>
-                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" BorderBrush="White" Background="#FF8300" Click="Button_Users"/>
+                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontSize="16" BorderBrush="#FFFF8300" Background="#FF8300" Click="Button_Users"/>
             </StackPanel>
         </WrapPanel>
 

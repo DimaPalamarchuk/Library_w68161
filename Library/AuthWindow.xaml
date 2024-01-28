@@ -16,13 +16,13 @@
             <StackPanel>
                 <TextBlock Text="Authorization" FontSize="34" FontWeight="Bold" FontFamily="Century Gothic" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 <Grid Margin="10 30 30 0">
-                    <Button HorizontalAlignment="Left" Content="Registration" Background="#00000000" BorderBrush="#00000000" Click="Button_Window_Reg_Click" Foreground="#FFD4B16A"/>
-                    <Button HorizontalAlignment="Right" Content="Login" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#DDFFFFFF" Background="#FFD4B16A"/>
-                    <Button Content="Forgot Password" HorizontalAlignment="Center" Margin="0 10" Foreground="#DDFFFFFF" Background="#FF00BEFF" BorderBrush="#FF00BEFF" Click="Button_ForgotPassword_Click"/>
+                    <Button HorizontalAlignment="Left" Content="Registration" Background="#00000000" BorderBrush="#00000000" Click="Button_Window_Reg_Click" Foreground="#FFD4B16A" FontFamily="Century Gothic"/>
+                    <Button HorizontalAlignment="Right" Content="Login" Background="#FFD4B16A" BorderBrush="#00000000" FontFamily="Century Gothic"/>
+                    <Button Content="Forgot Password" HorizontalAlignment="Center" Margin="0 10" Foreground="#DDFFFFFF" Background="#FFD4B16A" BorderBrush="#FFD4B16A" FontFamily="Century Gothic" Click="Button_ForgotPassword_Click"/>
                 </Grid>
-                <TextBox x:Name="textBoxLogin" materialDesign:HintAssist.Hint="Type Your UserName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10"/>
-                <PasswordBox x:Name="passBox" materialDesign:HintAssist.Hint="Type Your Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="10"/>
-                <Button Content="Enter" Margin="0 20" Width="460" Background="#FFD4B16A" BorderBrush="#00000000" Click="Button_Auth_Click"/>
+                <TextBox x:Name="textBoxLogin" materialDesign:HintAssist.Hint="Type Your UserName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10" FontFamily="Century Gothic"/>
+                <PasswordBox x:Name="passBox" materialDesign:HintAssist.Hint="Type Your Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="10" FontFamily="Century Gothic"/>
+                <Button Content="Enter" Margin="0 20" Width="460" Background="#FFD4B16A" BorderBrush="#00000000" Click="Button_Auth_Click" FontFamily="Century Gothic"/>
             </StackPanel>
         </Border>
 

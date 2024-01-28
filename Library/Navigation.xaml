@@ -35,21 +35,21 @@
             <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" MinHeight="100" MaxHeight="254" Background="#FFFAFAFA">
                 <materialDesign:PackIcon Kind="Book" Height="100" Width="100" Margin="0 55 0 0"/>
                 <TextBlock Text="Books" Margin="0 5 0 0" HorizontalAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16"/>
-                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" BorderBrush="White" Background="#FF8300" Click="Button_Search_Book_Click"/>
+                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontSize="16" BorderBrush="#FFFF8300" Background="#FF8300" Click="Button_Search_Book_Click"/>
             </StackPanel>
 
             <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" MinHeight="100" MaxHeight="254" Background="White">
                 <materialDesign:PackIcon Kind="Library" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 55 0 0"/>
                 <TextBlock Text="Library" Margin="0,5,0,0" HorizontalAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16"/>
-                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Background="#FF8300" BorderBrush="White"/>
+                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontSize="16" Background="#FF8300" BorderBrush="#FFFF8300"/>
             </StackPanel>
 
             <StackPanel Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" MinHeight="100" MaxHeight="254" Background="White">
                 <materialDesign:PackIcon Kind="Bookshelf" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 55 0 0"/>
                 <TextBlock Text="Bookshelf" Margin="0,5,0,0" HorizontalAlignment="Center" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16"/>
-                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" BorderBrush="White" Background="#FF8300" Click="Button_BookShelf"/>
+                <Button Content="Press" Height="60" Margin="0 15 0 0" FontFamily="Century Gothic" FontSize="16" BorderBrush="#FFFF8300" Background="#FF8300" Click="Button_BookShelf"/>
             </StackPanel>
-            <Button Content="Exit" HorizontalAlignment="Left" Margin="10,-57,0,0" VerticalAlignment="Top" Height="47" Width="85" Background="#FFB73F3A" BorderBrush="White" FontFamily="Century Gothic" FontWeight="Bold" FontSize="16" Click="Button_Click_Exit"/>
+            <Button Content="Exit" HorizontalAlignment="Left" Margin="10,-57,0,0" VerticalAlignment="Top" Height="47" Width="85" Background="#FFB73F3A" BorderBrush="White" FontFamily="Century Gothic" FontSize="16" Click="Button_Click_Exit"/>
 
         </Grid>
     </Grid>
