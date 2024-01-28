@@ -89,6 +89,9 @@
     <Compile Include="AdminViewBorrowed.xaml.cs">
       <DependentUpon>AdminViewBorrowed.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ForgotPasswordDialog.xaml.cs">
+      <DependentUpon>ForgotPasswordDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\ApplicationContext.cs" />
     <Compile Include="AuthWindow.xaml.cs">
       <DependentUpon>AuthWindow.xaml</DependentUpon>
@@ -114,6 +117,9 @@
       <DependentUpon>NewBookAdmin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs" />
+    <Compile Include="NewPasswordWindow.xaml.cs">
+      <DependentUpon>NewPasswordWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserPageWindow.xaml.cs">
       <DependentUpon>UserPageWindow.xaml</DependentUpon>
     </Compile>
@@ -141,6 +147,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ForgotPasswordDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="InputDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -162,6 +172,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="NewBookAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NewPasswordWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

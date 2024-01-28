@@ -71,5 +71,31 @@ namespace Library
             mainWindow.Show();
             Close();
         }
+
+        private void Button_ForgotPassword_Click(object sender, RoutedEventArgs e)
+        {
+            ForgotPasswordDialog forgotPasswordDialog = new ForgotPasswordDialog();
+            if (forgotPasswordDialog.ShowDialog() == true)
+            {
+                string email = forgotPasswordDialog.Email;
+                string login = forgotPasswordDialog.Login;
+
+                User user;
+                using (ApplicationContext db = new ApplicationContext())
+                {
+                    user = db.Users.FirstOrDefault(b => b.Email == email && b.Login == login);
+                }
+
+                if (user != null)
+                {
+                    NewPasswordWindow newPasswordWindow = new NewPasswordWindow(user);
+                    newPasswordWindow.Show();
+                }
+                else
+                {
+                    MessageBox.Show("User with the provided email and login not found.");
+                }
+            }
+        }
     }
 }
