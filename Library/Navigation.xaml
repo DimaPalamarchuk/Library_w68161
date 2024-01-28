@@ -10,7 +10,7 @@
         Title="Navigation" Height="600" Width="1000">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="Images/image2.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="Images/image2.png" Stretch="UniformToFill"/>
         </Grid.Background>
 
         <Grid.RowDefinitions>
