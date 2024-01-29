@@ -47,7 +47,8 @@ namespace Library
 
                 if (userToUpdate != null)
                 {
-                    userToUpdate.Pass = newPassword;
+                    userToUpdate.DeleteOldPassword(newPassword);
+
                     db.SaveChanges();
 
                     MessageBox.Show("Password updated successfully!");

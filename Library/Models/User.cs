@@ -32,7 +32,16 @@
             this.email = email;
             this.pass = pass;
         }
+        public void DeleteOldPassword(string newPass)
+        {
+            string oldPassword = Pass;
 
+            if (oldPassword != null && oldPassword != newPass)
+            {
+            }
+
+            Pass = newPass;
+        }
         public override string ToString()
         {
             return "User: " + Login + " Email: " + Email;
