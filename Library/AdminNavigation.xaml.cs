@@ -29,7 +29,7 @@ namespace Library
 
         }
 
-        private void Button_Users(object sender, RoutedEventArgs e)
+        private void Button_DataBase(object sender, RoutedEventArgs e)
         {
             UserPageWindow userPageWindow = new UserPageWindow();
             userPageWindow.Show();

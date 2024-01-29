@@ -14,7 +14,11 @@
                 <DropShadowEffect BlurRadius= "30" Color= "LightGray" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel>
-                <TextBlock Text="Authorization" FontSize="34" FontWeight="Bold" FontFamily="Century Gothic" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Row="0" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Bookshelf" VerticalAlignment="Top" FontSize="32" FontFamily="Century Gothic" FontWeight="Bold" Foreground="Black" Grid.RowSpan="2">
+                    <TextBlock.Effect>
+                        <DropShadowEffect BlurRadius="10" Color="Gray"/>
+                    </TextBlock.Effect>
+                </TextBlock>
                 <Grid Margin="10 10 30 0">
                     <Button HorizontalAlignment="Left" Content="Registration" Background="#00000000" BorderBrush="#00000000" Click="Button_Window_Reg_Click" Foreground="Peru" FontFamily="Century Gothic"/>
                     <Button HorizontalAlignment="Right" Content="Login" Background="Peru" BorderBrush="#00000000" FontFamily="Century Gothic"/>

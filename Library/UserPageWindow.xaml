@@ -14,7 +14,11 @@
                 <DropShadowEffect BlurRadius= "30" Color= "LightGray" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel Height="290" VerticalAlignment="Top">
-                <TextBlock Text="DataBase" FontSize="34" FontWeight="Bold" FontFamily="Century Gothic" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Row="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Data Base" VerticalAlignment="Top" FontSize="32" FontFamily="Century Gothic" FontWeight="Bold" Foreground="Black" Grid.RowSpan="2">
+                    <TextBlock.Effect>
+                        <DropShadowEffect BlurRadius="10" Color="Gray"/>
+                    </TextBlock.Effect>
+                </TextBlock>
 
                 <ListView x:Name="listOfUsers" Margin="10"/>
                 <ListView x:Name="listOfBooks" Margin="20"/>

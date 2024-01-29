@@ -8,6 +8,7 @@
         mc:Ignorable="d"
         Title="Book Search Admin" Height="600" Width="1000">
     <Grid>
+        <Image Source="Images/image2.png" Stretch="Fill"/>
         <Button Content="Back" HorizontalAlignment="Left" Margin="21,26,0,0" VerticalAlignment="Top" Height="47" Width="96" Background="#FFB73F3A" BorderBrush="White" FontFamily="Century Gothic" FontSize="16" Click="Button_Click_Back"/>
         <Button Content="Add New Book" HorizontalAlignment="Left" Margin="21,78,0,0" VerticalAlignment="Top" Height="47" Width="149" Background="#FF4CAF50" BorderBrush="White" FontFamily="Century Gothic" FontSize="16" Click="Button_Click_AddBook"/>
         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Height="496" Margin="0,78,0,0" Width="550">

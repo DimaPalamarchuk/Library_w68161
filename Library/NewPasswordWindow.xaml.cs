@@ -24,6 +24,7 @@ namespace Library
             this.user = user;
         }
 
+       //
         private void Button_Submit_Click(object sender, RoutedEventArgs e)
         {
             string newPassword = passwordBox.Password;
@@ -41,7 +42,7 @@ namespace Library
                 return;
             }
 
-            using (ApplicationContext db = new ApplicationContext())
+            using (ApplicationContext db = new ApplicationContext()) //
             {
                 User userToUpdate = db.Users.FirstOrDefault(u => u.Login == user.Login);
 
@@ -60,7 +61,7 @@ namespace Library
                 }
             }
         }
-
+  
         private void Button_Cancel_Click(object sender, RoutedEventArgs e)
         {
             Close();

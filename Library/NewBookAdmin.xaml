@@ -11,7 +11,11 @@
     <Grid>
         <Image Source="Images/image2.png" Stretch="Fill"/>
         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Height="350" Width="500">
-            <TextBlock Text="Add New Book" FontSize="24" FontWeight="Bold" Margin="0,10,0,20" HorizontalAlignment="Center" FontFamily="Gothic Century"/>
+            <TextBlock Grid.Row="0" HorizontalAlignment="Center" Margin="0,38,0,0" TextWrapping="Wrap" Text="Add New Book" VerticalAlignment="Top" FontSize="32" FontFamily="Century Gothic" FontWeight="Bold" Foreground="White" Grid.RowSpan="2">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="10" Color="LightGray"/>
+                </TextBlock.Effect>
+            </TextBlock>
 
             <TextBox x:Name="tbTitle" Margin="10" Height="41" materialDesign:HintAssist.Hint="Title" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Century Gothic" CaretBrush="#FFFF8300" SelectionBrush="#FFFF8300"/>
             <TextBox x:Name="tbAuthor" Margin="10" Height="42" materialDesign:HintAssist.Hint="Author" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Century Gothic" SelectionBrush="#FFFF8300" CaretBrush="#FFFF8300"/>
