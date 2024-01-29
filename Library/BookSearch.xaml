@@ -8,13 +8,14 @@
         mc:Ignorable="d"
         Title="Book Search" Height="600" Width="1000">
     <Grid>
+        <Image Source="Images/image1.png" Stretch="Fill"/>
         <Button Content="Back" HorizontalAlignment="Left" Margin="21,26,0,0" VerticalAlignment="Top" Height="47" Width="96" Background="#FFB73F3A" BorderBrush="White" FontFamily="Century Gothic"  FontSize="16" Click="Button_Click_Back"/>
         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Height="496" Margin="0,78,0,0" Width="550">
-            <ComboBox x:Name="cbSearchField" Width="200" Height="48" Margin="0,0,0,10" SelectedIndex="0" Style="{StaticResource MaterialDesignFloatingHintComboBox}" FontFamily="Century Gothic">
+            <ComboBox x:Name="cbSearchField" Width="200" Height="48" Margin="0,0,0,10" SelectedIndex="0" Style="{StaticResource MaterialDesignFloatingHintComboBox}" FontFamily="Century Gothic" Foreground="White">
                 <ComboBoxItem Content="Title" FontFamily="Century Gothic" FontSize="12"/>
                 <ComboBoxItem Content="Author" FontFamily="Century Gothic" FontSize="12"/>
             </ComboBox>
-            <TextBox x:Name="tbSearchTerm" Width="200" Height="40" Margin="0,0,0,10" materialDesign:HintAssist.Hint="Search Term" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Century Gothic"/>
+            <TextBox x:Name="tbSearchTerm" Width="200" Height="40" Margin="0,0,0,10" materialDesign:HintAssist.Hint="Search Term" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Century Gothic" FontWeight="Bold" Foreground="White"/>
             <Button Content="Search" Width="100" Height="30" Background="#FFD4B16A" BorderBrush="{DynamicResource MaterialDesignBody}" FontFamily="Century Gothic" FontSize="16" Click="Button_Click_Search"/>
             <DataGrid x:Name="dgSearchResults" AutoGenerateColumns="False" IsReadOnly="True" Style="{StaticResource MaterialDesignDataGrid}" Margin="10 10" Width="413" FontFamily="Century Gothic">
                 <DataGrid.Columns>
@@ -24,6 +25,6 @@
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
-        <TextBlock HorizontalAlignment="Center" Height="48" Margin="0,10,0,0" TextWrapping="Wrap" Text="Book Search" VerticalAlignment="Top" Width="212" FontFamily="Century Gothic" FontSize="32" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Center" Height="48" Margin="0,10,0,0" TextWrapping="Wrap" Text="Book Search" VerticalAlignment="Top" Width="212" FontFamily="Century Gothic" FontSize="32" FontWeight="Bold" Foreground="White"/>
     </Grid>
 </Window>

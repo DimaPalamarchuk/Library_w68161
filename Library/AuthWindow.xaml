@@ -8,21 +8,23 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="AuthWindow" Height="600" Width="1000" VerticalAlignment="Center">
     <Grid>
-        <Image Source="Images/image1.png" Stretch="Fill"/>
-        <Border MinWidth="300" Margin="15,15,15,38" Background="White" Padding="30" MaxWidth="550" CornerRadius="20" MinHeight="250" MaxHeight="350">
+        <Image Source="Images/image4.png" Stretch="Fill"/>
+        <Border MinWidth="300" Margin="15,15,15,38" Background="White" Padding="30" MaxWidth="550" CornerRadius="20" MinHeight="250" MaxHeight="370">
             <Border.Effect>
                 <DropShadowEffect BlurRadius= "30" Color= "LightGray" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel>
                 <TextBlock Text="Authorization" FontSize="34" FontWeight="Bold" FontFamily="Century Gothic" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                <Grid Margin="10 30 30 0">
-                    <Button HorizontalAlignment="Left" Content="Registration" Background="#00000000" BorderBrush="#00000000" Click="Button_Window_Reg_Click" Foreground="#FFD4B16A" FontFamily="Century Gothic"/>
-                    <Button HorizontalAlignment="Right" Content="Login" Background="#FFD4B16A" BorderBrush="#00000000" FontFamily="Century Gothic"/>
-                    <Button Content="Forgot Password" HorizontalAlignment="Center" Margin="0 10" Foreground="#DDFFFFFF" Background="#FFD4B16A" BorderBrush="#FFD4B16A" FontFamily="Century Gothic" Click="Button_ForgotPassword_Click"/>
+                <Grid Margin="10 10 30 0">
+                    <Button HorizontalAlignment="Left" Content="Registration" Background="#00000000" BorderBrush="#00000000" Click="Button_Window_Reg_Click" Foreground="Peru" FontFamily="Century Gothic"/>
+                    <Button HorizontalAlignment="Right" Content="Login" Background="Peru" BorderBrush="#00000000" FontFamily="Century Gothic"/>
+                    <Button Content="Forgot Password" HorizontalAlignment="Center" Margin="0 10" Foreground="#DDFFFFFF" Background="Peru" BorderBrush="Peru" FontFamily="Century Gothic" Click="Button_ForgotPassword_Click"/>
+                    
                 </Grid>
+                <Button Content="Login Employees" Background="Peru" BorderBrush="#00000000" FontFamily="Century Gothic" Click="Button_Login_Employees"/>
                 <TextBox x:Name="textBoxLogin" materialDesign:HintAssist.Hint="Type Your UserName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10" FontFamily="Century Gothic"/>
                 <PasswordBox x:Name="passBox" materialDesign:HintAssist.Hint="Type Your Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="10" FontFamily="Century Gothic"/>
-                <Button Content="Enter" Margin="0 20" Width="460" Background="#FFD4B16A" BorderBrush="#00000000" Click="Button_Auth_Click" FontFamily="Century Gothic"/>
+                <Button Content="Enter" Margin="0 20" Width="460" Background="Peru" BorderBrush="#00000000" Click="Button_Auth_Click" FontFamily="Century Gothic"/>
             </StackPanel>
         </Border>
 

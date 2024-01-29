@@ -38,23 +38,15 @@ namespace Library
                 User authUser = null;
                 using (ApplicationContext db = new ApplicationContext())
                 {
-                    authUser = db.Users.Where(b => b.Login == login && b.Pass == pass).FirstOrDefault();
+                    authUser = db.Users.Where(u => u.Login == login && u.Pass == pass).FirstOrDefault();
                 }
 
                 if (authUser != null)
                 {
+                    
                     MessageBox.Show("Successful!");
-
-                    if (login == "Admin")
-                    {
-                        AdminNavigation adminNavigation = new AdminNavigation();
-                        adminNavigation.Show();
-                    }
-                    else
-                    {
-                        Navigation navigation = new Navigation(login);
-                        navigation.Show();
-                    }
+                    Navigation navigation = new Navigation(login);
+                    navigation.Show();
                     Close();
                 }
                 else
@@ -96,6 +88,13 @@ namespace Library
                     MessageBox.Show("User with the provided email and login not found.");
                 }
             }
+        }
+
+        private void Button_Login_Employees(object sender, RoutedEventArgs e)
+        {
+            AuthEmployees authEmployees = new AuthEmployees();
+            authEmployees.Show();
+            Close();
         }
     }
 }

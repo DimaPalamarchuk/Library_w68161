@@ -1,0 +1,31 @@
+﻿<Window x:Class="Library.AuthEmployees"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="AuthWindow" Height="600" Width="1000" VerticalAlignment="Center">
+    <Grid>
+        <Image Source="Images/image4.png" Stretch="Fill"/>
+        <Border MinWidth="300" Margin="15,15,15,38" Background="White" Padding="30" MaxWidth="550" CornerRadius="20" MinHeight="250" MaxHeight="370">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius= "30" Color= "LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Employees Authorization" FontSize="34" FontWeight="Bold" FontFamily="Century Gothic" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Grid Margin="10 10 30 0">
+                    <Button HorizontalAlignment="Left" Content="Registration" Background="#00000000" BorderBrush="#00000000" Click="Button_Window_Reg_Click" Foreground="Peru" FontFamily="Century Gothic"/>
+                    <Button HorizontalAlignment="Right" Content="Login" Background="Peru" BorderBrush="#00000000" FontFamily="Century Gothic"/>
+
+                </Grid>
+                <Button Content="Login Visitor" Background="Peru" BorderBrush="#00000000" FontFamily="Century Gothic" Click="Button_Login_Visitor" Margin="10"/>
+                <TextBox x:Name="textBoxLogin" materialDesign:HintAssist.Hint="Type Your EmployeeLogin" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10" FontFamily="Century Gothic"/>
+                <PasswordBox x:Name="passBox" materialDesign:HintAssist.Hint="Type Your Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="10" FontFamily="Century Gothic"/>
+                <Button Content="Enter" Margin="0 20" Width="460" Background="Peru" BorderBrush="#00000000" Click="Button_Auth_Click" FontFamily="Century Gothic"/>
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</Window>

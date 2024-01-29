@@ -8,7 +8,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="MainWindow" Height="600" Width="1000">
     <Grid>
-        <Image Source="Images/image1.png" Stretch="Fill"/>
+        <Image Source="Images/image4.png" Stretch="Fill"/>
         <Border MinWidth="300" Margin="15" Background="White" Padding="30" MaxWidth="550" CornerRadius="20" MinHeight="350" MaxHeight="460">
             <Border.Effect>
                 <DropShadowEffect BlurRadius= "30" Color= "LightGray" ShadowDepth="0"/>
@@ -16,14 +16,14 @@
             <StackPanel>
                 <TextBlock Text="Registration" FontSize="34" FontWeight="Bold" FontFamily="Century Gothic" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 <Grid Margin="10 30 30 0">
-                    <Button HorizontalAlignment="Left" Content="Registration" Background="#FFD4B16A" BorderBrush="#00000000" FontFamily="Century Gothic"/>
-                    <Button HorizontalAlignment="Right" Content="Login" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFD4B16A" Click="Button_Window_Auth_Click" FontFamily="Century Gothic"/>
+                    <Button HorizontalAlignment="Left" Content="Registration" Background="Peru" BorderBrush="#00000000" FontFamily="Century Gothic"/>
+                    <Button HorizontalAlignment="Right" Content="Login" Style="{StaticResource MaterialDesignFlatButton}" Foreground="Peru" Click="Button_Window_Auth_Click" FontFamily="Century Gothic"/>
                 </Grid>
                 <TextBox x:Name="textBoxLogin" materialDesign:HintAssist.Hint="Type Your UserName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10" FontFamily="Century Gothic" CaretBrush="#FFD4B16A" SelectionBrush="#FFD4B16A"/>
                 <PasswordBox x:Name="passBox" materialDesign:HintAssist.Hint="Type Your Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="10" FontFamily="Century Gothic"/>
                 <PasswordBox x:Name="passBox_2" materialDesign:HintAssist.Hint="Repeat Your Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="10" FontFamily="Century Gothic"/>
                 <TextBox x:Name="textBoxEmail" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="15" FontFamily="Century Gothic"/>
-                <Button Content="Registration" Margin="0 20" Width="460" Background="#FFD4B16A" BorderBrush="#00000000" Click="Button_Reg_Click" FontFamily="Century Gothic"/>
+                <Button Content="Registration" Margin="0 20" Width="460" Background="Peru" BorderBrush="#00000000" Click="Button_Reg_Click" FontFamily="Century Gothic"/>
             </StackPanel>
         </Border>
 

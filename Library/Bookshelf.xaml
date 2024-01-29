@@ -8,18 +8,23 @@
         mc:Ignorable="d"
         Title="Bookshelf" Height="600" Width="1000">
     <Grid>
+        <Image Source="Images/image1.png" Stretch="Fill"/>
         <Button Content="Back" HorizontalAlignment="Left" Margin="21,26,0,0" VerticalAlignment="Top" Height="47" Width="96" Background="#FFB73F3A" BorderBrush="White" FontFamily="Century Gothic" FontSize="16" Click="Button_Click_Back"/>
         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Height="496" Margin="0,78,0,0" Width="550">
-            <DataGrid x:Name="dgBookshelf" AutoGenerateColumns="False" IsReadOnly="True" Style="{StaticResource MaterialDesignDataGrid}" Margin="10 10" Width="413" FontFamily="Century Gothic">
+            <DataGrid x:Name="dgBookshelf" AutoGenerateColumns="False" IsReadOnly="True" Style="{StaticResource MaterialDesignDataGrid}" Margin="10 10" Width="600" FontFamily="Century Gothic" SelectionChanged="dgBookshelf_SelectionChanged">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Title" Binding="{Binding title}" />
-                    <DataGridTextColumn Header="Author" Binding="{Binding author}" />
-                    <DataGridCheckBoxColumn Header="Available" Binding="{Binding available}" />
+                    <DataGridTextColumn Header="Title" Binding="{Binding title}" Width="200"/>
+                    <DataGridTextColumn Header="Author" Binding="{Binding author}" Width="200"/>
+                    <DataGridCheckBoxColumn Header="Available" Binding="{Binding available}" Width="200"/>
                 </DataGrid.Columns>
             </DataGrid>
             <Button Content="Borrow Book" Width="150" Height="30" Background="#FFD4B16A" BorderBrush="{DynamicResource MaterialDesignBody}" FontFamily="Century Gothic" FontSize="16" Click="Button_Click_Borrow"/>
             <Button Content="Return Book" Width="150" Height="30" Background="#FFD4B16A" BorderBrush="{DynamicResource MaterialDesignBody}" FontFamily="Century Gothic" FontSize="16" Click="Button_Click_Return" Margin="0,10,0,0"/>
         </StackPanel>
-        <TextBlock HorizontalAlignment="Center" Height="48" Margin="0,10,0,0" TextWrapping="Wrap" Text="Bookshelf" VerticalAlignment="Top" Width="212" FontFamily="Century Gothic" FontSize="32" FontWeight="Bold"/>
+        <TextBlock Grid.Row="0" HorizontalAlignment="Center" Margin="0,38,0,0" TextWrapping="Wrap" Text="Admin Navigation" VerticalAlignment="Top" FontSize="32" FontFamily="Century Gothic" FontWeight="Bold" Foreground="White" Grid.RowSpan="2">
+            <TextBlock.Effect>
+                <DropShadowEffect BlurRadius="10" Color="LightGray"/>
+            </TextBlock.Effect>
+        </TextBlock>
     </Grid>
 </Window>
