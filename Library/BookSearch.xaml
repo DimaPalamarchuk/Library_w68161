@@ -25,6 +25,10 @@
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
-        <TextBlock HorizontalAlignment="Center" Height="48" Margin="0,10,0,0" TextWrapping="Wrap" Text="Book Search" VerticalAlignment="Top" Width="212" FontFamily="Century Gothic" FontSize="32" FontWeight="Bold" Foreground="White"/>
+        <TextBlock Grid.Row="0" HorizontalAlignment="Center" Margin="0,38,0,0" TextWrapping="Wrap" Text="Book Search" VerticalAlignment="Top" FontSize="32" FontFamily="Century Gothic" FontWeight="Bold" Foreground="White" Grid.RowSpan="2">
+            <TextBlock.Effect>
+                <DropShadowEffect BlurRadius="10" Color="LightGray"/>
+            </TextBlock.Effect>
+        </TextBlock>
     </Grid>
 </Window>

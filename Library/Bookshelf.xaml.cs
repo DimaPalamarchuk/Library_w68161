@@ -211,9 +211,5 @@ namespace Library
             Close();
         }
 
-        private void dgBookshelf_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }

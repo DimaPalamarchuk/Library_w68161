@@ -7,9 +7,13 @@ namespace Library
 {
     public partial class AuthWindow : Window
     {
+
+        ApplicationContext db;
         public AuthWindow()
         {
             InitializeComponent();
+            db = new ApplicationContext();
+
         }
 
         private void Button_Auth_Click(object sender, RoutedEventArgs e)
@@ -36,7 +40,6 @@ namespace Library
                 passBox.Background = Brushes.Transparent;
 
                 User authUser = null;
-                using (ApplicationContext db = new ApplicationContext())
                 {
                     authUser = db.Users.Where(u => u.Login == login && u.Pass == pass).FirstOrDefault();
                 }
