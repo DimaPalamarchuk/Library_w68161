@@ -38,5 +38,6 @@ namespace Library
             this.email = email;
             this.pass = pass;
         }
+
     }
 }

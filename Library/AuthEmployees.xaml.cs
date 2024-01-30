@@ -17,9 +17,11 @@ namespace Library
 {
     public partial class AuthEmployees : Window
     {
+        ApplicationContext db;
         public AuthEmployees()
         {
             InitializeComponent();
+            db = new ApplicationContext();
         }
 
         private void Button_Auth_Click(object sender, RoutedEventArgs e)
@@ -46,10 +48,7 @@ namespace Library
                 passBox.Background = Brushes.Transparent;
 
                 Employee authEmployee = null;
-                using (ApplicationContext db = new ApplicationContext())
-                {
-                    authEmployee = db.Employees.FirstOrDefault(em => em.Login == login && em.Pass == pass);
-                }
+                authEmployee = db.Employees.FirstOrDefault(em => em.Login == login && em.Pass == pass);
 
                 if (authEmployee != null)
                 {

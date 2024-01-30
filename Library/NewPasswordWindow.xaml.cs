@@ -18,10 +18,13 @@ namespace Library
     {
         private User user;
 
+        ApplicationContext db;
+
         public NewPasswordWindow(User user)
         {
             InitializeComponent();
             this.user = user;
+            db = new ApplicationContext();
         }
 
        //
@@ -42,8 +45,6 @@ namespace Library
                 return;
             }
 
-            using (ApplicationContext db = new ApplicationContext()) //
-            {
                 User userToUpdate = db.Users.FirstOrDefault(u => u.Login == user.Login);
 
                 if (userToUpdate != null)
@@ -60,7 +61,6 @@ namespace Library
                     MessageBox.Show("User not found in the database.");
                 }
             }
-        }
   
         private void Button_Cancel_Click(object sender, RoutedEventArgs e)
         {

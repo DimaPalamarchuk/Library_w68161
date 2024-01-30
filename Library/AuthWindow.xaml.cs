@@ -40,15 +40,13 @@ namespace Library
                 passBox.Background = Brushes.Transparent;
 
                 User authUser = null;
-                {
-                    authUser = db.Users.Where(u => u.Login == login && u.Pass == pass).FirstOrDefault();
-                }
+                authUser = db.Users.Where(u => u.Login == login && u.Pass == pass).FirstOrDefault();
 
                 if (authUser != null)
                 {
                     
                     MessageBox.Show("Successful!");
-                    Navigation navigation = new Navigation(login);
+                    Navigation navigation = new Navigation(authUser);
                     navigation.Show();
                     Close();
                 }
@@ -76,10 +74,8 @@ namespace Library
                 string login = forgotPasswordDialog.Login;
 
                 User user;
-                using (ApplicationContext db = new ApplicationContext())
-                {
-                    user = db.Users.FirstOrDefault(b => b.Email == email && b.Login == login);
-                }
+                user = db.Users.FirstOrDefault(b => b.Email == email && b.Login == login);
+                
 
                 if (user != null)
                 {
