@@ -1,5 +1,7 @@
 ﻿using System.Windows;
 
+
+//Уже не используется
 namespace Library
 {
     public partial class InputDialog : Window

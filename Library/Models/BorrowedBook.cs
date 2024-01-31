@@ -16,3 +16,15 @@
         }
     }
 }
+
+
+/*
+    CREATE TABLE "BorrowedBooks" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"bookName"	TEXT NOT NULL,
+	"userName"	TEXT NOT NULL,
+	PRIMARY KEY("id" AUTOINCREMENT),
+	FOREIGN KEY("userName") REFERENCES "Users"("login"),
+	FOREIGN KEY("bookName") REFERENCES "Books"("title")
+);
+*/

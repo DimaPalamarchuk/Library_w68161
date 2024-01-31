@@ -40,3 +40,13 @@
         }
     }
 }
+
+/*
+  CREATE TABLE "Books" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"title"	TEXT NOT NULL UNIQUE,
+	"author"	TEXT NOT NULL,
+	"available"	INTEGER NOT NULL,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+*/

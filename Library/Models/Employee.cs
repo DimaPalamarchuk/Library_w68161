@@ -41,3 +41,16 @@ namespace Library
 
     }
 }
+
+
+/*
+CREATE TABLE "Employees" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"firstName"	TEXT NOT NULL,
+	"lastName"	TEXT NOT NULL,
+	"login"	TEXT NOT NULL,
+	"pass"	TEXT NOT NULL,
+	"email"	TEXT NOT NULL,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+*/

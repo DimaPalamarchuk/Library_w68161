@@ -95,7 +95,6 @@ namespace Library
                 int bookId = Convert.ToInt32(selectedBook["id"]);
                 string bookTitle = selectedBook["title"].ToString();
 
-                // Проверяем, что запись о взятии книги существует в таблице BorrowedBooks для текущего пользователя и книги
                 BorrowedBook borrowedBook = db.BorrowedBooks.FirstOrDefault(bb => bb.BookName == bookTitle && bb.UserName == currentUser.Login);
 
                 if (borrowedBook != null)
@@ -103,7 +102,6 @@ namespace Library
                     UpdateBookAvailabilityLocal(selectedBook, 1);
                     MessageBox.Show($"Book '{bookTitle}' returned. Thank you!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                    // Удаляем запись о взятии книги из таблицы BorrowedBooks
                     db.BorrowedBooks.Remove(borrowedBook);
                     db.SaveChanges();
                 }
@@ -146,30 +144,30 @@ namespace Library
 
         private User GetUserByLogin(string login)
         {
-                return db.Users.FirstOrDefault(u => u.Login == login);
+            return db.Users.FirstOrDefault(u => u.Login == login);
         }
 
         private void AddBorrowedBook(string bookTitle, string userLogin)
         {
             try
             {
-                    Book book = db.Books.FirstOrDefault(b => b.Title == bookTitle);
+                Book book = db.Books.FirstOrDefault(b => b.Title == bookTitle);
 
-                    if (book != null)
+                if (book != null)
+                {
+                    BorrowedBook borrowedBook = new BorrowedBook
                     {
-                        BorrowedBook borrowedBook = new BorrowedBook
-                        {
-                            BookName = book.Title,
-                            UserName = GetUserByLogin(userLogin)?.Login
-                        };
+                        BookName = book.Title,
+                        UserName = GetUserByLogin(userLogin)?.Login
+                    };
 
-                        db.BorrowedBooks.Add(borrowedBook);
-                        db.SaveChanges();
-                    }
-                    else
-                    {
-                        MessageBox.Show($"Book with title '{bookTitle}' not found.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
+                    db.BorrowedBooks.Add(borrowedBook);
+                    db.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show($"Book with title '{bookTitle}' not found.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
             catch (Exception ex)
             {
@@ -182,17 +180,17 @@ namespace Library
         {
             try
             {
-                    BorrowedBook borrowedBook = db.BorrowedBooks.FirstOrDefault(bb => bb.BookName == bookTitle);
+                BorrowedBook borrowedBook = db.BorrowedBooks.FirstOrDefault(bb => bb.BookName == bookTitle);
 
-                    if (borrowedBook != null)
-                    {
-                        db.BorrowedBooks.Remove(borrowedBook);
-                        db.SaveChanges();
-                    }
-                    else
-                    {
-                        MessageBox.Show($"No record found for book '{bookTitle}' in BorrowedBooks.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
+                if (borrowedBook != null)
+                {
+                    db.BorrowedBooks.Remove(borrowedBook);
+                    db.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show($"No record found for book '{bookTitle}' in BorrowedBooks.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
             catch (Exception ex)
             {

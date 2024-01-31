@@ -17,9 +17,9 @@
                 </TextBlock.Effect>
             </TextBlock>
 
-            <TextBox x:Name="tbTitle" Margin="10" Height="41" materialDesign:HintAssist.Hint="Title" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Century Gothic" CaretBrush="#FFFF8300" SelectionBrush="#FFFF8300"/>
-            <TextBox x:Name="tbAuthor" Margin="10" Height="42" materialDesign:HintAssist.Hint="Author" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Century Gothic" SelectionBrush="#FFFF8300" CaretBrush="#FFFF8300"/>
-            <TextBox x:Name="tbAvailable" Margin="10" Height="41" materialDesign:HintAssist.Hint="Available" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Century Gothic" CaretBrush="#FFFF8300" SelectionBrush="#FFFF8300"/>
+            <TextBox x:Name="tbTitle" Margin="10" Height="41" materialDesign:HintAssist.Hint="Title" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Century Gothic" CaretBrush="#FFFF8300" SelectionBrush="#FFFF8300" Background="#7FFFFFFF"/>
+            <TextBox x:Name="tbAuthor" Margin="10" Height="42" materialDesign:HintAssist.Hint="Author" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Century Gothic" SelectionBrush="#FFFF8300" CaretBrush="#FFFF8300" Background="#7FFFFFFF"/>
+            <TextBox x:Name="tbAvailable" Margin="10" Height="41" materialDesign:HintAssist.Hint="Available" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Century Gothic" CaretBrush="#FFFF8300" SelectionBrush="#FFFF8300" Background="#7FFFFFFF"/>
 
             <Button Content="Add Book" Width="150" Height="40" Background="#FFFF8300" BorderBrush="#FFFF8300" FontFamily="Century Gothic" FontSize="16" Click="Button_Click_AddBook" Margin="0,20,0,0"/>
         </StackPanel>
