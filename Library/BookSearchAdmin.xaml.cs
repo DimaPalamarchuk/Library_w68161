@@ -24,6 +24,7 @@ namespace Library
         {
             // Закрыть текущее окно и открыть окно AdminNavigation
             AdminNavigation adminNaviog = new AdminNavigation();
+            adminNaviog.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             adminNaviog.Show();
             Close();
         }
@@ -81,6 +82,7 @@ namespace Library
         {
             // Открыть окно NewBook для добавления новой книги
             NewBook newBook = new NewBook();
+            newBook.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             newBook.Show();
         }
     }

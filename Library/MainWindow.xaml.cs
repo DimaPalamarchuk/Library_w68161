@@ -76,6 +76,7 @@ namespace Library
                 db.SaveChanges();
 
                 AuthWindow authWindow = new AuthWindow();
+                authWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                 authWindow.Show();
                 Close();
             }
@@ -85,6 +86,7 @@ namespace Library
         private void Button_Window_Auth_Click(object sender, RoutedEventArgs e)
         {
             AuthWindow authWindow = new AuthWindow();
+            authWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             authWindow.Show();
             Close();
         }

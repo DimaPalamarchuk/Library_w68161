@@ -31,6 +31,7 @@ namespace Library
         private void Button_Click_Back(object sender, RoutedEventArgs e)
         {
             AdminNavigation adminNavigation = new AdminNavigation();
+            adminNavigation.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             adminNavigation.Show();
             Close();
         }

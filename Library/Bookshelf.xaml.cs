@@ -202,6 +202,7 @@ namespace Library
         private void Button_Click_Back(object sender, RoutedEventArgs e)
         {
             Navigation navigation = new Navigation(currentUser);
+            navigation.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             navigation.Show();
             Close();
         }

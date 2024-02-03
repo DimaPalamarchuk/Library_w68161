@@ -20,6 +20,7 @@ namespace Library
         private void Button_Search_Book_Click(object sender, RoutedEventArgs e)
         {
             BookSearch bookSearch = new BookSearch();
+            bookSearch.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             bookSearch.Show();
             Close();
         }
@@ -27,6 +28,7 @@ namespace Library
         private void Button_Click_Exit(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
+            mainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             mainWindow.Show();
             Close();
         }
@@ -34,6 +36,7 @@ namespace Library
         private void Button_BookShelf(object sender, RoutedEventArgs e)
         {
             Bookshelf bookshelf = new Bookshelf(currentUser);
+            bookshelf.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             bookshelf.Show();
             Close();
         }

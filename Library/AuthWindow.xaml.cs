@@ -47,6 +47,7 @@ namespace Library
                     
                     MessageBox.Show("Successful!");
                     Navigation navigation = new Navigation(authUser);
+                    navigation.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                     navigation.Show();
                     Close();
                 }
@@ -61,6 +62,7 @@ namespace Library
         private void Button_Window_Reg_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
+            mainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             mainWindow.Show();
             Close();
         }
@@ -92,6 +94,7 @@ namespace Library
         private void Button_Login_Employees(object sender, RoutedEventArgs e)
         {
             AuthEmployees authEmployees = new AuthEmployees();
+            authEmployees.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             authEmployees.Show();
             Close();
         }
